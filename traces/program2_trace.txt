@@ -1,0 +1,23 @@
+cycle 1: PC=00000000 IR=20080005 ADDI | t0=5 t1=0 t2=0 | r8 0x00000000->0x00000005 (imm=5)
+cycle 2: PC=00000004 IR=20090000 ADDI | t0=5 t1=0 t2=0 | r9 0x00000000->0x00000000 (imm=0)
+cycle 3: PC=00000008 IR=01284820 ADD  | t0=5 t1=5 t2=0 | r9 0x00000000->0x00000005
+cycle 4: PC=0000000C IR=2108FFFF ADDI | t0=4 t1=5 t2=0 | r8 0x00000005->0x00000004 (imm=-1)
+cycle 5: PC=00000010 IR=11000001 BEQ  | t0=4 t1=5 t2=0 | rs=r8 rt=r0 imm=1 taken=False nextPC=00000014
+cycle 6: PC=00000014 IR=1000FFFC BEQ  | t0=4 t1=5 t2=0 | rs=r0 rt=r0 imm=-4 taken=True nextPC=00000008
+cycle 7: PC=00000008 IR=01284820 ADD  | t0=4 t1=9 t2=0 | r9 0x00000005->0x00000009
+cycle 8: PC=0000000C IR=2108FFFF ADDI | t0=3 t1=9 t2=0 | r8 0x00000004->0x00000003 (imm=-1)
+cycle 9: PC=00000010 IR=11000001 BEQ  | t0=3 t1=9 t2=0 | rs=r8 rt=r0 imm=1 taken=False nextPC=00000014
+cycle 10: PC=00000014 IR=1000FFFC BEQ  | t0=3 t1=9 t2=0 | rs=r0 rt=r0 imm=-4 taken=True nextPC=00000008
+cycle 11: PC=00000008 IR=01284820 ADD  | t0=3 t1=12 t2=0 | r9 0x00000009->0x0000000c
+cycle 12: PC=0000000C IR=2108FFFF ADDI | t0=2 t1=12 t2=0 | r8 0x00000003->0x00000002 (imm=-1)
+cycle 13: PC=00000010 IR=11000001 BEQ  | t0=2 t1=12 t2=0 | rs=r8 rt=r0 imm=1 taken=False nextPC=00000014
+cycle 14: PC=00000014 IR=1000FFFC BEQ  | t0=2 t1=12 t2=0 | rs=r0 rt=r0 imm=-4 taken=True nextPC=00000008
+cycle 15: PC=00000008 IR=01284820 ADD  | t0=2 t1=14 t2=0 | r9 0x0000000c->0x0000000e
+cycle 16: PC=0000000C IR=2108FFFF ADDI | t0=1 t1=14 t2=0 | r8 0x00000002->0x00000001 (imm=-1)
+cycle 17: PC=00000010 IR=11000001 BEQ  | t0=1 t1=14 t2=0 | rs=r8 rt=r0 imm=1 taken=False nextPC=00000014
+cycle 18: PC=00000014 IR=1000FFFC BEQ  | t0=1 t1=14 t2=0 | rs=r0 rt=r0 imm=-4 taken=True nextPC=00000008
+cycle 19: PC=00000008 IR=01284820 ADD  | t0=1 t1=15 t2=0 | r9 0x0000000e->0x0000000f
+cycle 20: PC=0000000C IR=2108FFFF ADDI | t0=0 t1=15 t2=0 | r8 0x00000001->0x00000000 (imm=-1)
+cycle 21: PC=00000010 IR=11000001 BEQ  | t0=0 t1=15 t2=0 | rs=r8 rt=r0 imm=1 taken=True nextPC=00000018
+cycle 22: PC=00000018 IR=AC090000 SW   | t0=0 t1=15 t2=0 | [0] <- 0x0000000f (from r9)
+cycle 23: HALT @ 0000001C
