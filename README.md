@@ -6,14 +6,6 @@ The assembler does two passes (first to resolve labels, then to encode instructi
 
 Supports: `ADD`, `SUB`, `ADDI`, `LW`, `SW`, `BEQ`
 
-## How to run
-
-```bash
-python main.py programs/program1.asm --trace
-```
-
-This assembles the program, saves the hex output to `hex/`, runs it on the CPU, and writes an execution trace to `traces/`. The `--trace` flag also prints the trace to the console.
-
 ## Files
 
 - `assembler.py` - two-pass assembler (labels + encoding)
